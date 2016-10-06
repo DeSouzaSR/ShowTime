@@ -35,6 +35,19 @@ totalHours = totalMinutes // 60
 # Compute the current hours
 currentHour = totalHours % 24
 
+
+print('Show Time')
+print('=========\n')
+
+print('This program show the local time from machine.')
+
+TimeZone = eval(input('Enter your time zone (e.g. -3): '))
+
 # Display results
 print('\nCurrent time is', currentHour, ':',
-      currentMinute,':', currentSecond, 'GMT\n')
+      currentMinute,':', currentSecond, 'GMT')
+
+# Display result, adjusting local time using modular arithmetic 
+currentHourLocal = (currentHour + TimeZone) % 24
+print('Current time is', currentHourLocal, ':',
+      currentMinute,':', currentSecond, 'Local\n')
